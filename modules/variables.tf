@@ -8,6 +8,21 @@ variable "location" {
   type        = string
 }
 
+variable "path" {
+  description = "Path to the source of the function app."
+  type        = string
+}
+
+variable "name" {
+  description = "Name to wrap up the scripts in a compressed file"
+  type        = string
+}
+
+variable "function_name" {
+  description = "Name of the function"
+  type        = string
+}
+
 variable "storage_account_name" {
   description = "Name of the function storage account."
   type        = string
@@ -38,12 +53,7 @@ variable "key_vault_name" {
   type        = string
 }
 
-variable "threshold_days" {
-  description = "Limit of days that can a VM be alive"
-  type        = number
-}
-
-variable "threshold_builds" {
-  description = "Limit of buildbots that can be associated to a builder"
-  type        = number
+variable "app_settings" {
+  description = "Variables to add to appsettings of the function app "
+  type        = any
 }
