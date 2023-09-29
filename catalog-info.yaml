@@ -1,0 +1,18 @@
+# For more information about the available options please visit: http://go/backstage (VPN required)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    github.com/project-slug: Unity-Technologies/cicd-azure-terraform-buildbots-functions
+  name: cicd-azure-terraform-buildbots-functions
+  description: "Terraform module for Buildbots Azure functions"
+  labels:
+    costcenter: "7028"
+  links:
+    - url: https://unity.slack.com/messages/C02Q99CAQE5/
+      title: "#devops-team-infra"
+      icon: chat
+spec:
+  type: terraform
+  lifecycle: production
+  owner: unity-technologies/cicd
