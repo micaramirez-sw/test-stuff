@@ -1,6 +1,6 @@
 module "function_delete_old_buildbots" {
   source                             = "./modules"
-  path                               = "${path.module}/../delete-old-buildbots-function"
+  path                               = "${path.module}/modules/function-code/delete-old-buildbots-function"
   name                               = "DeleteOldBuildbots"
   function_name                      = "ucb-mgue-delete-old-buildbots-func001"
   environment                        = var.environment
@@ -18,7 +18,7 @@ module "function_delete_old_buildbots" {
 
 module "function_check_buildbots_on_builders" {
   source                             = "./modules"
-  path                               = "${path.module}/../buildbots-check-on-builders-function"
+  path                               = "${path.module}/modules/function-code/buildbots-check-on-builders-function"
   name                               = "CheckBuildbotsOnBuilders"
   function_name                      = "ucb-mgue-check-on-builders-func001"
   environment                        = var.environment
