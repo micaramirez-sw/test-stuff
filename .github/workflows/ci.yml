@@ -37,5 +37,6 @@ jobs:
     needs: build
     if: always()
     steps:
-      -name print a value
+      name: print a value
       run: echo Hello from another job
+  
