@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Sarasa
         run: echo Sarasa
+      - name: Wait
+        run: sleep 200
   create-vanilla:
     runs-on: ubuntu-latest
     needs: create-user
