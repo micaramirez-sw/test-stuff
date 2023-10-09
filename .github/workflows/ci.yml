@@ -26,6 +26,9 @@ jobs:
 
       - name: Show file
         run: cat text.txt
+      
+      - name: Show file2
+        run: cat text2.txt
   create-base:
     runs-on: ubuntu-latest
     needs: create-vanilla
