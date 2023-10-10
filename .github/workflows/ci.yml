@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: create-vanilla
     steps:
+      - uses: actions/checkout@v2
       - name: Sarasa
         run: echo Sarasa
       - name: Upload artifact
