@@ -13,8 +13,9 @@ on:
 jobs:
   create-vanilla:
     runs-on: ubuntu-latest
-    - name: Download artifact
-      uses: dawidd6/action-download-artifact@v2
-      with:
-        workflow: ${{ github.event.workflow_run.workflow_id }}
-        workflow_conclusion: success
+    steps:
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: ${{ github.event.workflow_run.workflow_id }}
+          workflow_conclusion: success
