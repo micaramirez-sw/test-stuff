@@ -20,5 +20,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: test-${{ github.sha }}
+          name: user-image-version
           path: text.txt
