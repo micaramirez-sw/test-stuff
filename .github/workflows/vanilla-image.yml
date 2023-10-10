@@ -12,6 +12,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   create-vanilla:
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+      actions: read
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
