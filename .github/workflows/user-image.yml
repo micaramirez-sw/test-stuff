@@ -1,4 +1,4 @@
-name: CI
+name: User-Image
 
 # Controls when the action will run. 
 on:
@@ -13,25 +13,6 @@ on:
 jobs:
   create-user:
     runs-on: ubuntu-latest
-    steps:
-      - name: Sarasa
-        run: echo Sarasa
-      - name: Wait
-        run: sleep 10
-  create-vanilla:
-    runs-on: ubuntu-latest
-    needs: create-user
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Show file
-        run: cat text.txt
-      
-      - name: Show file2
-        run: cat text2.txt
-  create-base:
-    runs-on: ubuntu-latest
-    needs: create-vanilla
     steps:
       - uses: actions/checkout@v2
       - name: Sarasa
