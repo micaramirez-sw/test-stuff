@@ -22,5 +22,6 @@ jobs:
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: ${{ github.event.workflow_run.workflow_id }}
+          workflow: user-image.yml
           workflow_conclusion: success
+          branch: master
