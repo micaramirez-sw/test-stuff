@@ -1,0 +1,25 @@
+name: User Image # it may be one workflow per-provider if we cannot access to variables through API
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build_user_image:
+    runs-on: ubuntu-latest 
+    env:
+      image_output: ""
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+
+      - name: 'Run packer + ansible'
+        run: |
+          echo this should call build_user.sh
+          echo "user_$(date +'%Y-%m-%dT%H:%M:%S')" > artifact.txt
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: user-image-version
+          path: artifact.txt
