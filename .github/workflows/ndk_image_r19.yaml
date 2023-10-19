@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-   build_vanilla_image:
+   build_ndk_image:
     runs-on: ubuntu-latest 
     env:
       ndk_version: "r19"
