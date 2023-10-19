@@ -67,7 +67,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: dk-${{env.ndk_version}}-image-version
+          name: ndk-${{env.ndk_version}}-image-version
           path: artifact.txt
     
   build_ndk_r23b_image:
@@ -100,5 +100,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: dk-${{env.ndk_version}}-image-version
+          name: ndk-${{env.ndk_version}}-image-version
           path: artifact.txt
