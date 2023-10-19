@@ -1,5 +1,8 @@
 name: 04 NDK Image r19
 
+on:
+  workflow_dispatch:
+  
 jobs:
    build_ndk_image:
     runs-on: ubuntu-latest 

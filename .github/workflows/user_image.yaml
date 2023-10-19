@@ -1,5 +1,8 @@
 name: 01 User Image # it may be one workflow per-provider if we cannot access to variables through API
 
+on:
+  workflow_dispatch:
+  
 jobs:
   build_user_image:
     runs-on: ubuntu-latest 
