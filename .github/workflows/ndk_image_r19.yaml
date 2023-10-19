@@ -2,7 +2,7 @@ name: 04 NDK Image r19
 
 on:
   workflow_dispatch:
-  
+
 jobs:
    build_ndk_image:
     runs-on: ubuntu-latest 
@@ -27,7 +27,7 @@ jobs:
       - name: 'Run packer + ansible'
         run: |
           cat base-image-version/artifact.txt
-          echo $env:ndk_version
+          echo ${{env.ndk_version}}
           echo this should call build_ndk.sh
           echo "win10-packer-ndk-$(date +'%Y%m%d%H%M%S')" > artifact.txt
       
