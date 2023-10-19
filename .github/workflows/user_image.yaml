@@ -16,7 +16,7 @@ jobs:
       - name: 'Run packer + ansible'
         run: |
           echo this should call build_user.sh
-          echo "user_$(date +'%Y-%m-%dT%H:%M:%S')" > artifact.txt
+          echo "win10-packer-user-$(date +'%Y%m%d%H%M%S')" > artifact.txt
       
       - name: Upload artifact
         uses: actions/upload-artifact@v3

@@ -1,0 +1,37 @@
+name: Vanilla Image
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+   build_vanilla_image:
+    runs-on: ubuntu-latest 
+    env:
+      image_output: ""
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+      actions: read
+    steps:
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: user_image.yml
+
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+
+      - name: 'Run packer + ansible'
+        run: |
+          echo artifact.yml
+          echo this should call build_vanilla.sh
+          echo "win10-packer-vanilla-$(date +'%Y%m%d%H%M%S')" > artifact.txt
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: user-image-version
+          path: artifact.txt
