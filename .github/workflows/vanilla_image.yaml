@@ -26,6 +26,7 @@ jobs:
       
       - name: 'Run packer + ansible'
         run: |
+          dir
           type user-image-version/artifact.txt
           echo this should call build_vanilla.sh
           echo "win10-packer-vanilla-$(date +'%Y%m%d%H%M%S')" > artifact.txt
