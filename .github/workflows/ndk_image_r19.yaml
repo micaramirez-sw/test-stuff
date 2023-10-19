@@ -1,4 +1,4 @@
-name: 03 Base Image
+name: 04 NDK Image r19
 
 on:
   push:
@@ -8,6 +8,7 @@ jobs:
    build_vanilla_image:
     runs-on: ubuntu-latest 
     env:
+      ndk_version: "r19"
       image_output: ""
     permissions:
       id-token: write
@@ -22,16 +23,17 @@ jobs:
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          workflow: vanilla_image.yaml
+          workflow: base_image.yaml
       
       - name: 'Run packer + ansible'
         run: |
-          cat vanilla-image-version/artifact.txt
-          echo this should call build_base.sh
-          echo "win10-packer-base-$(date +'%Y%m%d%H%M%S')" > artifact.txt
+          cat base-image-version/artifact.txt
+          echo $env:ndk_version
+          echo this should call build_ndk.sh
+          echo "win10-packer-ndk-$(date +'%Y%m%d%H%M%S')" > artifact.txt
       
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: base-image-version
+          name: ndk-image-version
           path: artifact.txt
