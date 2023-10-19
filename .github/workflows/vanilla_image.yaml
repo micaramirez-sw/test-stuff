@@ -19,14 +19,14 @@ jobs:
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
-          workflow: user_image.yml
+          workflow: user_image.yaml
 
       - name: 'Checkout'
         uses: actions/checkout@v3
 
       - name: 'Run packer + ansible'
         run: |
-          echo artifact.yml
+          dir
           echo this should call build_vanilla.sh
           echo "win10-packer-vanilla-$(date +'%Y%m%d%H%M%S')" > artifact.txt
       
