@@ -1,9 +1,5 @@
 name: 04 NDK Image r19
 
-on:
-  push:
-    branches: [ "main" ]
-
 jobs:
    build_ndk_image:
     runs-on: ubuntu-latest 
