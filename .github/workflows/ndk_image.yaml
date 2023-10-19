@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-   build_ndk_r19_image:
+  build_ndk_r19_image:
     runs-on: ubuntu-latest 
     env:
       ndk_version: "r19"
@@ -102,4 +102,3 @@ jobs:
         with:
           name: dk-${{env.ndk_version}}-image-version
           path: artifact.txt
-
