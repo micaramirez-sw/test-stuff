@@ -3,7 +3,7 @@ name: 05 Unity Images 2019_4
 on:
  repository_dispatch:
     types:
-      - test
+      - unity_2019_4
 
 jobs:
   build_unity:
