@@ -1,0 +1,19 @@
+name: 05 Unity Images 2019_4
+
+on:
+ repository_dispatch:
+    types:
+      - test
+
+jobs:
+  build_unity:
+    runs-on: ubuntu-latest 
+    strategy:
+      matrix:
+        version: ${{ github.event.client_payload.versions }}
+    env:
+      image_output: ""
+    steps:
+      - name: 'Run packer + ansible'
+        run: |
+          echo ${{env.version}}
