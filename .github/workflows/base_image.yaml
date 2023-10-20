@@ -2,7 +2,14 @@ name: 03 Base Image
 
 on:
   workflow_dispatch:
-  
+    inputs:
+      provider:
+        type: choice
+        options:
+        - azure
+        - gcp
+
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Base Image {0}', inputs.provider) || '' }}
 jobs:
    build_vanilla_image:
     runs-on: ubuntu-latest 
