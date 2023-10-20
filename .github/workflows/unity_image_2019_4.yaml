@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       versions:
-        default: "[12,14,15]"
+        default: '["12","14","15"]'
 
   repository_dispatch:
     types:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest 
     strategy:
       matrix:
-        version: ${{ inputs.versions || github.event.client_payload.versions}}
+        version: ${{ github.event.inputs.versions || github.event.client_payload.versions }}
     env:
       image_output: ""
     steps:
