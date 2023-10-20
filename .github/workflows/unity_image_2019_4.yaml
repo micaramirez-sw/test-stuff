@@ -1,7 +1,12 @@
 name: 05 Unity Images 2019_4
 
 on:
- repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      versions:
+        default: "[12,14,15]"
+
+  repository_dispatch:
     types:
       - unity_2019_4
 
@@ -10,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest 
     strategy:
       matrix:
-        version: ${{ github.event.client_payload.versions }}
+        version: ${{ inputs.versions || github.event.client_payload.versions}}
     env:
       image_output: ""
     steps:
