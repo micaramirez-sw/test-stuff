@@ -9,7 +9,7 @@ on:
         - azure
         - gcp
 
-run-name: ${{ github.event_name == 'workflow_dispatch' && format('Base Image {0}', inputs.provider) || '' }}
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('Base Image PROVIDER:{0}', inputs.provider) || '' }}
 jobs:
    build_vanilla_image:
     runs-on: ubuntu-latest 
