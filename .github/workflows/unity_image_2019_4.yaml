@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest 
     strategy:
       matrix:
-        version: ${{ github.event.inputs.versions || github.event.client_payload.versions }}
+        version: ${{ fromJSON(github.event.inputs.versions) || github.event.client_payload.versions }}
     env:
       image_output: ""
     steps:
