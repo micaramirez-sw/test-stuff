@@ -1,0 +1,26 @@
+name: TEST VARIABLE
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  run-check-unity-versions:
+    runs-on: ubuntu-latest 
+    env:
+      image_output: ""
+    steps:
+      - name: 'Run packer + ansible'
+        run: |
+          version=$(echo 'asdasd')
+          echo $version
+          echo "check-version=$version" >> "$GITHUB_OUTPUT"
+
+  build_user_image_next:
+    runs-on: ubuntu-latest 
+    needs: [run-check-unity-versions]
+    env:
+      UNITY_VERSIONS: ${{ needs.run-check-unity-versions.outputs.check-version }}
+    steps:
+      - name: "run test"
+        run: |
+          echo $UNITY_VERSIONS
