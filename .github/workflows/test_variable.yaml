@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest 
     env:
       image_output: ""
+    outputs:
+      check-version: ${{ steps.check-unity-version.outputs.check-version }}
     steps:
       - name: 'Run packer + ansible'
         run: |
