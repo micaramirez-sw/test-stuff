@@ -12,6 +12,7 @@ jobs:
       check-version: ${{ steps.check-unity-version.outputs.check-version }}
     steps:
       - name: 'Run packer + ansible'
+        id: 'check-unity-version'
         run: |
           version=$(echo 'asdasd')
           echo $version
