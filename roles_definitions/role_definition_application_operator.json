@@ -1,0 +1,28 @@
+{
+    "name": "a5cc3cb5-2b71-4af7-8447-f5c9b2d27b83",
+    "type": "Microsoft.Authorization/roleDefinitions",
+    "apiVersion": "2018-01-01-preview",
+    "properties": {
+        "roleName": "Application-Operator",
+        "description": "Contributor role granted for application/operations team at resource group level",
+        "type": "customRole",
+        "permissions": [
+            {
+                "actions": [
+                    "*"
+                ],
+                "notActions": [
+                    "Microsoft.Authorization/*/write", 
+                    "Microsoft.Network/publicIPAddresses/write", 
+                    "Microsoft.Network/virtualNetworks/write", 
+                    "Microsoft.KeyVault/locations/deletedVaults/purge/action"
+                ],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ],
+        "assignableScopes": [
+            "${current_scope_resource_id}"
+        ]
+    }
+}

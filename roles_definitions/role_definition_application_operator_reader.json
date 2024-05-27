@@ -1,0 +1,24 @@
+{
+    "name": "f5a5fec0-1e58-405a-aad4-f81626d72332",
+    "type": "Microsoft.Authorization/roleDefinitions",
+    "apiVersion": "2018-01-01-preview",
+    "properties": {
+        "roleName": "Application-Operator-Reader",
+        "description": "View all resources, but does not allow you to make any changes. Granted for application/operations read-only team at subscription level",
+        "type": "customRole",
+        "permissions": [
+            {
+                "actions": [
+                    "*/read"
+                ],
+                "notActions": [
+                ],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ],
+        "assignableScopes": [
+            "${current_scope_resource_id}"
+        ]
+    }
+}

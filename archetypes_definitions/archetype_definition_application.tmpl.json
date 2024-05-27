@@ -1,0 +1,12 @@
+{
+    "application_operations": {
+        "policy_assignments": [],
+        "policy_definitions": [],
+        "policy_set_definitions": [],
+        "role_definitions": ["Application-Operator", "Application-Operator-Reader"],
+        "archetype_config": {
+            "parameters": {},
+            "access_control": {}
+        }
+    }
+}
